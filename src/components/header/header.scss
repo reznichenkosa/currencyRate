@@ -1,0 +1,31 @@
+.header {
+
+    &__wrapper {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        font-weight: bolder;
+        color: var(--color-main);
+        span {
+            display: block;
+            background-color: var(--color-primary);
+            padding: 5px;
+            border-radius: 5px;
+            color: white;
+        }
+    }
+
+    &__link {
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        color: var(--color-main);
+    }
+}

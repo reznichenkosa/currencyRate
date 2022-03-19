@@ -1,0 +1,20 @@
+.currency-info {
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 0 20px 0;
+    }
+
+    &__title {
+        color: var(--color-main);
+        text-align: center;
+        width: 100%;
+    }
+    &__timestamp {
+        width: 100%;
+        text-align: center;
+        
+    }
+}

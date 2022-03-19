@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Roboto:wght@300;400;500;700;900&family=Rubik:wght@400;700&display=swap');
+@import './variables';
+
+html,
+body {
+    font-family: 'Roboto' ,serif;
+    font-weight: normal;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+
+.container {
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.message {
+    margin-top: 30vh;
+    text-align: center;
+    line-height: 30px;
+    color: var(--color-primary);
+}

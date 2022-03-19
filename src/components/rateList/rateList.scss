@@ -1,0 +1,47 @@
+
+.custom-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    max-width: 500px;
+    text-align: center;
+
+    td, th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      position: relative;
+    }
+
+    .tr-info:hover {
+      background-color: var(--color-primary);
+      cursor: pointer;
+      color: white;
+    }
+
+    .tr-info:hover .tooltip {
+      display: flex;
+    }
+
+    .rase {
+      color: rgba($color: red, $alpha: 1);
+    }
+
+    .down {
+      color: rgba($color: green, $alpha: 1);
+    }
+
+    .tooltip {
+      z-index: 10;
+      display: none;
+      position: absolute;
+      left: -50%;
+      top: 50px;
+      width: 250px;
+      padding: 10px 10px;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba($color: #000000, $alpha: .8);
+      border-radius: 5px;
+      color: white;
+      transition: all .5s;
+    }
+}
