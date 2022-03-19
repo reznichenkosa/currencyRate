@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './currencyInfo.scss';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Service from '../../API/Service';
 import { useFetching } from '../../hooks/useFetching';
 import CurrencyInfoList from '../../components/currencyInfoList/CurrencyInfoList';
@@ -8,10 +8,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { historyFetched } from '../../actions';
 import getFullDate from '../../utils/date';
 import Spinner from '../../components/UI/spinner/Spinner';
+import AnimationPage from '../../components/UI/animationPage/AnimationPage';
 
 const CurrensyInfo = () => {
     const {char} = useParams();
     const countLastDays = 10;
+    const navigation = useNavigate();
 
     const history = useSelector(state => state.history);
     const dispatch = useDispatch();
@@ -35,18 +37,21 @@ const CurrensyInfo = () => {
                         <h1 className='currency-info__title'>Динамика курса {historyItem[0].Nominal} {historyItem[0].Name} к рублю</h1>
                         <p className='currency-info__timestamp'>За последние {countLastDays} дней</p>
                         <CurrencyInfoList historyItem={historyItem} />
+                        <button onClick={() => navigation(-1)} className="currency-info__link">Назад</button>
                     </>;
 
     return (
-        <div className="currency-info">
-            <div className="container">
-                <div className="currency-info__wrapper">
-                    {loading}
-                    {error}
-                    {content}
-                </div>
-            </div> 
-        </div>
+        <AnimationPage>
+            <div className="currency-info">
+                <div className="container">
+                    <div className="currency-info__wrapper">
+                        {loading}
+                        {error}
+                        {content}
+                    </div>
+                </div> 
+            </div>
+        </AnimationPage>
     );
 };
 

@@ -8,6 +8,7 @@ import './rate.scss';
 import Spinner from '../../components/UI/spinner/Spinner';
 
 import {currencyRateFetched} from '../../actions/index';
+import AnimationPage from '../../components/UI/animationPage/AnimationPage';
 
 const Rate = () => {
     const currencyRate = useSelector(state => state.currencyRate);
@@ -36,15 +37,17 @@ const Rate = () => {
                         <RateList currencyRateArr={currencyRateArr}/>
                     </>;
     return (
-        <section className="rate">
-            <div className="container">
-                <div className="rate__wrapper">
-                    {loading}
-                    {error}
-                    {content}
+        <AnimationPage>
+            <section className="rate">
+                <div className="container">
+                    <div className="rate__wrapper">
+                        {loading}
+                        {error}
+                        {content}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </AnimationPage>
     );
 };
 

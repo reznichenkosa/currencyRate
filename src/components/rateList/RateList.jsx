@@ -7,16 +7,16 @@ const RateList = ({currencyRateArr}) => {
         <table className='custom-table'>
             <thead>
                 <tr>
-                    <th>Char Code</th>
-                    <th>Nominal</th>
-                    <th>Value</th>
-                    <th>Difference</th>
+                    <th>Код валюты</th>
+                    <th>Название</th>
+                    <th>Номинал</th>
+                    <th>Значение</th>
+                    <th>Изменение</th>
                 </tr>
             </thead>
             <tbody>
                 {currencyRateArr && currencyRateArr.map(item => 
                     <RateListItem key={item.NumCode} {...item}/>)}
-                
             </tbody>
         </table>
     );

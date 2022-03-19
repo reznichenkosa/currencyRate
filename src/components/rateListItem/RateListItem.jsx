@@ -3,14 +3,11 @@ import arrow from '../../sources/icons/arrow-down.svg';
 import { NavLink } from 'react-router-dom';
 
 const RateListItem = ({CharCode, Nominal, Name, Value, Previous}) => {
-
     const differece = +(100 - (Previous * 100 / Value)).toFixed(2);
     return (
         <tr className='tr-info' tabIndex="0">
-            <td>
-                <NavLink to={'/' + CharCode}>{CharCode}</NavLink>
-                <span className='tooltip'>{Name}</span>
-            </td>
+            <td>{CharCode}</td>
+            <td><NavLink to={'/' + CharCode}>{Name}</NavLink></td>
             <td>{Nominal}</td>
             <td>{Value}</td>
             <td className={ differece > 0 ? 'rase' : 'down'}>
